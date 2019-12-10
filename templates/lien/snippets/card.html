@@ -1,0 +1,13 @@
+<div class="card" style="width: 18rem;">
+  {% if instance.photo_main %}
+    <img src="{{ instance.photo_main.url }}" class="card-img-top" alt="{{  instance.lot_num }}">
+    {% endif %}
+    <div class="card-body">
+      <h5 class="card-title">{{ instance.year }} 
+        {{ instance.make }}  
+        {{ instance.model }} </h5>  
+      <p class="card-text">${{ instance.price }}.00 </p>
+      <a href="{{ instance.get_absolute_url }}" class="btn btn-primary">Details</a>
+      <!-- <a href="{% url 'liens:detail' pk=instance.pk %}" class="btn btn-warning">url shortcut</a> -->
+    </div>
+  </div>
