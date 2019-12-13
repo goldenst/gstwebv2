@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'liens',
     'drivers',
     'damages',
+    'garage',
 ]
 
 MIDDLEWARE = [

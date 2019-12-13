@@ -35,11 +35,11 @@
   </section>
 
   <!-- Listing -->
-  <section id="listing" class="py-4">
-    <div class="container">
-      <a href="{% url 'liens:list' %}" class="btn btn-light mb-4">Back To Listings</a>
+  <section id="listing" class="py-2">
+    <div class="container mr-auto">
+      <a href="{% url 'liens:list' %}" class="btn btn-secondary mb-4">Back To Listings</a>
       <div class="row">
-        <div class="col-md-9">
+        <div class="col-md-9 ">
           <!-- Home Main Image -->
           <img src="{{ object.photo_main.url }}" alt="" class="img-main img-fluid mb-3 " width="500">
           <!-- Thumbnails -->
@@ -47,41 +47,41 @@
             <div class="col-md-2">
               {% if object.photo_1 %}
               <a href="{{ object.photo_1.url }}" data-lightbox="home-images">
-                <img src="{{ object.photo_1.url }}" alt="" class="img-fluid">
+                <img src="{{ object.photo_1.url }}" alt="" class="img-fluid py-1">
               </a>
             </div>
               {% endif %}
               {% if object.photo_2 %}
             <div class="col-md-2">
               <a href="{{ object.photo_2.url }}" data-lightbox="home-images">
-                <img src="{{ object.photo_2.url }}" alt="" class="img-fluid">
+                <img src="{{ object.photo_2.url }}" alt="" class="img-fluid py-1">
               </a>
             </div>{% endif %}
             {% if object.photo_3 %}
             <div class="col-md-2">
               <a href="{{ object.photo_3.url }}" data-lightbox="home-images">
-                <img src="{{ object.photo_3.url }}" alt="" class="img-fluid">
+                <img src="{{ object.photo_3.url }}" alt="" class="img-fluid py-1">
               </a>
             </div>
             {% endif %}
               {% if object.photo_4 %}
             <div class="col-md-2">
               <a href="{{ object.photo_4.url }}" data-lightbox="home-images">
-                <img src="{{ object.photo_4.url }}" alt="" class="img-fluid">
+                <img src="{{ object.photo_4.url }}" alt="" class="img-fluid py-1">
               </a>
             </div>
             {% endif %}
               {% if object.photo_5 %}
             <div class="col-md-2">
               <a href="{{ object.photo_5.url }}" data-lightbox="home-images">
-                <img src="{{ object.photo_5.url }}" alt="" class="img-fluid">
+                <img src="{{ object.photo_5.url }}" alt="" class="img-fluid py-1">
               </a>
             </div>
             {% endif %}
               {% if object.photo_6 %}
             <div class="col-md-2">
               <a href="{{ object.photo_6.url }}" data-lightbox="home-images">
-                <img src="{{ object.photo_6.url }}" alt="" class="img-fluid">
+                <img src="{{ object.photo_6.url }}" alt="" class="img-fluid py-1">
               </a>
             </div>
             {% endif %}

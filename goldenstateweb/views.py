@@ -7,7 +7,7 @@ from .forms import ContactForm, LoginForm, RegisterForm
 # ----------------------------- home page -------------------------------------
 def home_page(request):
   context = {
-    'title': 'Home page', 
+    'title': 'Golden State Towing', 
   }
   if request.user.is_authenticated:
     context ['admin'] = 'You ae loged in as admin'
@@ -16,16 +16,16 @@ def home_page(request):
 # ----------------------------- about page -------------------------------------
 def about_page(request):
   context = {
-    'title': 'About page',
+    'title': 'About Us',
   }
-  return render(request, 'home_page.html', context )
+  return render(request, 'about.html', context )
 
 
 # ----------------------------- contact page -------------------------------------
 def contact_page(request):
   contact_form = ContactForm(request.POST or None)
   context = {
-    'title': 'Contact page',
+    'title': 'Contact Us',
     'form': contact_form,
   }
   if contact_form.is_valid():

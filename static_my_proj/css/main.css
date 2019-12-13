@@ -1,3 +1,7 @@
 body {
-  color: #ccc;
+  background-color: blue;
+}
+
+#map {
+  padding: 10px;
 }

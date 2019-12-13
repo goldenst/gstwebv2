@@ -4,4 +4,13 @@ from django.contrib import admin
 from .models import Damage
 
 
-admin.site.register(Damage)
+
+class DamageAdmin(admin.ModelAdmin):
+  list_display = ('id','cust_name','cost_to_gst', 'status', 'driver' ) 
+  list_display_links = ('id', 'cust_name')
+  list_editable = ('status',)
+  search_fields = ('driver', 'cust_name')
+  list_per_page = 25
+
+
+admin.site.register(Damage, DamageAdmin)
