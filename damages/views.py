@@ -3,6 +3,7 @@ from django.http import Http404
 from django.shortcuts import render, get_object_or_404
 
 from .models import Damage
+from .forms import DamageForm
 
 # ----------------- list view ------------------------
 
@@ -26,3 +27,15 @@ def damage_detail_view(request, pk=None, *args, **kwargs):
     'object': instance
   }
   return render(request, "damages/detail.html", context)
+
+  # --------------- Create damage ---------------------------
+def damage_create_view(request):
+  form = DamageForm(request.POST or None)
+  if form.is_valid():
+    form.save()
+    form = DamageForm()
+
+  context = {
+    'form' : form,
+    }
+  return render(request, 'damages/damage-new.html', context)

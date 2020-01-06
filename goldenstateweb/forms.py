@@ -80,3 +80,32 @@ class RegisterForm(forms.Form):
     if password2 != password:
       raise forms.ValidationError('passwords must match')
     return data
+
+
+
+
+# class CallForm(forms.Form):
+#   fullname    = forms.CharField(
+#               widget=forms.TextInput(
+#                   attrs={
+#                     "class": "form-control", 
+#                     "placeholder": "Name"
+#                     }
+#                     )
+#               )
+#   email       = forms.EmailField(
+#               widget=forms.EmailInput(
+#                   attrs={
+#                     "class": "form-control", 
+#                     "placeholder": "Email"
+#                     }
+#                     )
+#               )
+#   message     = forms.CharField(
+#               widget=forms.Textarea(
+#                   attrs={
+#                     "class": "form-control", 
+#                     "placeholder": "My Message"
+#                     }
+#                     )
+#               )

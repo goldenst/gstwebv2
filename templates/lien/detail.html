@@ -11,7 +11,7 @@
         <div class="col-md-12">
           <h1 >{{object.year}} {{object.make}} {{object.model}}</h1>
           <p class="lead">
-            <i class="fas fa-map-marker"></i>Yard: {{ object.yard }} </p>
+            <i class="fas fa-map-marker"> </i>Yard: {{ object.yard }} </p>
         </div>
       </div>
     </div>
@@ -39,9 +39,9 @@
     <div class="container mr-auto">
       <a href="{% url 'liens:list' %}" class="btn btn-secondary mb-4">Back To Listings</a>
       <div class="row">
-        <div class="col-md-9 ">
+        <div class="col-md-9 ml-auto mr-auto ">
           <!-- Home Main Image -->
-          <img src="{{ object.photo_main.url }}" alt="" class="img-main img-fluid mb-3 " width="500">
+          <img src="{{ object.photo_main.url }}" alt="" class="img-main img-fluid mb-3" width="500">
           <!-- Thumbnails -->
           <div class="row mb-5 thumbs">
             <div class="col-md-2">

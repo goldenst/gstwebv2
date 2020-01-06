@@ -4,6 +4,8 @@
 {% load static %}
 {% block content %}
 
+{% if request.user.is_authenticated %}
+
 <div class="container">
   <section id="showcase-inner" class="py-5">
     <div class="container">
@@ -161,5 +163,14 @@
 
 
 </div>
+{% else %}
+<div class="container">
+  <div class="row">
+    <div class="col py-3 text-center">
+      <h3>Sorry You are Not Authorized</h3>
+    </div>
+  </div>
+</div>
 
+{% endif %}
 {% endblock %}

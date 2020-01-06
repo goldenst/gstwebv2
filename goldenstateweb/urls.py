@@ -16,9 +16,12 @@ urlpatterns = [
     path('login/', login_page, name='login'),
     path('register/', register_page),
     path('lien/', include("liens.urls", namespace='liens')),
+    path('calls/', include("calls.urls")),
+    path('services/', include("services.urls")),
+    path('search/', include("search.urls", namespace='search')),
     path('garage/', include("garage.urls", namespace='garage')),
     path('damages/', include("damages.urls", namespace='damages')),
-    path('admin/', admin.site.urls),
+    path('admin/', admin.site.urls, name="admin"),
     
 ]
 

@@ -1,3 +1,4 @@
+from django.db.models import Q
 from django.db import models
 from datetime import datetime
 import random
@@ -37,6 +38,10 @@ class LienSaleManager(models.Manager):
       return qs.first()
     return None
 
+  def search(self, query):
+    lookups = Q(year__icontains=query) |Q(make__icontains=query ) | Q(model__icontains=query )
+    return self.get_queryset().filter(lookups).distinct()
+
 
 # ---------------- lien sale model --------------------------------
 class LienSale(models.Model):
@@ -49,13 +54,13 @@ class LienSale(models.Model):
   vin           = models.CharField(max_length=17, blank=True)
   engine        = models.CharField(max_length=20, blank=True)
   fuel          = models.CharField(max_length=20, default="Gas")
-  reg_date      = models.DateTimeField(blank=True)
+  reg_date      = models.DateField(blank=True)
   catagory      = models.CharField(max_length=20, default="Cars")
   price         = models.IntegerField(default=0.00)
   odom          = models.IntegerField(blank=True)
   keys          = models.BooleanField(default=True)
   comment       = models.TextField(blank=True)
-  avalible_date = models.DateTimeField(blank=True)
+  avalible_date = models.DateField(blank=True)
   is_published  = models.BooleanField(default=True)
   featured      = models.BooleanField(default=False)
   photo_main    = models.ImageField(upload_to='liensales/')

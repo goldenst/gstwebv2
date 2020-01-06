@@ -14,6 +14,13 @@ def lien_sales_list_view(request):
   }
   return render(request, "lien/list.html", context)
 
+# class lien_sales_list_view(ListView):
+#   template_name = "lien/list.html"
+
+#   def get_queryset(self, *args, **kwargs):
+#     request = self.request
+#     return LienSale.objects.all()
+
 
 # ----------------  detail View ---------------------------
 
@@ -26,6 +33,10 @@ def lien_sales_detail_view(request, pk=None, *args, **kwargs):
     'object': instance
   }
   return render(request, "lien/detail.html", context)
+
+
+# ------------------- Search View -----------------------------
+
 
 
 # ---------------- Detail Slug view =============
