@@ -4,6 +4,7 @@ from datetime import datetime
 import random
 import os
 
+
 from sellers.models import Seller
 
 # from django.db.models.signals import pre_save, post_save
@@ -45,7 +46,7 @@ class LienSaleManager(models.Manager):
 
 # ---------------- lien sale model --------------------------------
 class LienSale(models.Model):
-  seller        = models.ForeignKey(Seller, default=True, on_delete=models.DO_NOTHING)
+  seller        = models.ForeignKey(Seller, default=True, null=True, blank=True, on_delete=models.DO_NOTHING)
   yard          = models.CharField(max_length=20, default="Auburn")
   lot_num       = models.IntegerField(blank=True)
   year          = models.CharField(max_length=4, blank=True)

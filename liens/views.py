@@ -3,6 +3,7 @@ from django.http import Http404
 from django.shortcuts import render, get_object_or_404
 
 from .models import LienSale
+from sellers.models import Seller
 
 # ----------------- list view ------------------------
 

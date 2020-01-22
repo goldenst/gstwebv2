@@ -2,6 +2,7 @@ from django.contrib import admin
 
 # Register your models here.
 from .models import LienSale
+from sellers.models import Seller
 
 class LienSaleAdmin(admin.ModelAdmin):
   list_display = ('id','yard', 'is_published', 'featured', 'year','make','model', 'price',) 

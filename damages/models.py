@@ -63,7 +63,7 @@ class Damage(models.Model):
   cost_to_gst         = models.DecimalField(default=0.00, max_digits=10, decimal_places=2)
   repaired_at         = models.CharField(blank=True, max_length=120)
   closed              = models.BooleanField(default=False)
-  closed_date         = models.DateField(blank=True)
+  closed_date         = models.DateField(blank=True, null=True)
   damages_est         = models.DecimalField(default=0.00, max_digits=10, decimal_places=2)
   estimate            = models.FileField(upload_to='damages/', blank=True)
   driver_statement    = models.FileField(upload_to='damages/', blank=True)
